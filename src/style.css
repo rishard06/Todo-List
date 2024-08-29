@@ -1,0 +1,63 @@
+:root {
+    --light: #F8EDE3;
+    --medium-light: #DFD3C3;
+    --dark-light: #D0B8A8;
+    --orange-brown: #C5705D;
+}
+
+body {
+    padding: 0;
+    margin: 0   ;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--dark-light);
+}
+
+header {
+    grid-column: 1 / 3;
+    width: 100vw;
+    text-align: center;
+    color: var(--light);
+    background-color: var(--orange-brown);
+}
+
+.left-side {
+    background-color: var(--medium-light);
+    height: 91.3vh;
+}
+
+.left-side .add-task {
+    background-color: var(--light);
+    color: var(--orange-brown);
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    height: 1.9rem;
+    margin: 10px;
+}
+
+.left-side .add-task:hover {
+    background-color: var(--dark-light);
+    color: var(--light);
+}
+
+.left-side .add-task:active {
+    background-color: var(--orange-brown);
+}
+
+.left-side ul {
+    background-color: var(--light);
+    margin: 0 10px;
+    padding: 10px 20px;
+    height: 89%;
+    border-radius: 10px;
+    list-style: none;
+    overflow: auto;
+}
+
+.left-side li {
+    padding: 5px;
+    color: var(--orange-brown);
+    border-bottom: 1px solid var(--dark-light);
+}
+
