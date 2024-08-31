@@ -23,6 +23,7 @@ export default function() {
 
     const priorityList = document.createElement('input');
     priorityList.setAttribute("list", "priority")
+    priorityList.classList.add('dropdown')
 
     const dataList = document.createElement('datalist');
     dataList.setAttribute("id", "priority");
@@ -40,10 +41,14 @@ export default function() {
     formBtnAddTask.classList.add('addtask');
     formBtnAddTask.textContent = "Add project";
     
-    formDiv.appendChild(titleInput); formDiv.appendChild(descriptionInput);
-    formDiv.appendChild(dueDate); formDiv.appendChild(priorityList);
-    formDiv.appendChild(dataList); dataList.appendChild(opt1);
-    dataList.appendChild(opt2); dataList.appendChild(opt3);
+    formDiv.appendChild(titleInput); 
+    formDiv.appendChild(descriptionInput);
+    formDiv.appendChild(dueDate); 
+    formDiv.appendChild(priorityList);
+    formDiv.appendChild(dataList); 
+    dataList.appendChild(opt1);
+    dataList.appendChild(opt2); 
+    dataList.appendChild(opt3);
     formDiv.appendChild(formBtnAddTask);
     formParent.appendChild(formDiv);
     document.body.appendChild(formParent);
@@ -65,8 +70,12 @@ export default function() {
             titleInput.required = true;
             dueDate.required = true;
         }else {
-            console.log(dueDate.value);
-            addInfo(titleInput.value, descriptionInput.value, dueDate.value, priorityList.value);
+            addInfo(
+                titleInput.value,
+                descriptionInput.value,
+                dueDate.value,
+                priorityList.value
+            );
             document.body.removeChild(formParent);
         }
     });
