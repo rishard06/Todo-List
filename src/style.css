@@ -32,8 +32,9 @@ header {
 .left-side img {
     position: absolute;
     top: 82px;
-    left: 30px;
+    left: 20px;
     height: 1.3rem;
+    fill: #f3d21a;
 }
 
 .left-side .add-task {
@@ -42,11 +43,12 @@ header {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
-    border-radius: 5px;
+    border-radius: 53px;
     border: none;
     width: 93%;
     height: 1.9rem;
     margin: 10px;
+    cursor: pointer;
 }
 
 .left-side .add-task:hover {
@@ -66,15 +68,32 @@ header {
     margin: 0 10px;
     padding: 10px 20px;
     height: 89%;
-    border-radius:5px;
+    border-radius: 15px;
     list-style: none;
     overflow: auto;
 }
 
 .left-side li {
-    padding: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
     color: var(--orange-brown);
-    border-bottom: 1px solid var(--dark-light);
+    border-bottom: 1px solid var(--orange-brown);
+    cursor: pointer;
+    width: inherit;
+    overflow: hidden;
+    text-overflow: inherit;
+}
+
+.left-side li:active {
+    border: 1px solid var(--orange-brown);
+    border-radius: 5px;
+}
+
+.left-side .flag {
+    position: relative;
+    top: 2px;
+    left: -5px;
 }
 
 .form-parent {
@@ -120,15 +139,6 @@ header {
     width: 150px;
     margin: 5px;
     cursor: pointer;
-}
-
-.form .cancel {
-    border: 1px solid rgb(236, 83, 83);
-    color: rgb(71, 71, 71);
-}
-
-.form .cancel:hover {
-    background-color: rgb(199, 110, 110);
 }
 
 .form .addtask {
