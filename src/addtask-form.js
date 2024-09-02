@@ -16,7 +16,7 @@ export default function() {
     descriptionInput.placeholder = "Description";
 
     const dueDate = document.createElement('input');
-    dueDate.setAttribute("type", "text");
+    dueDate.setAttribute("type", "text  ");
     dueDate.setAttribute("onfocus", "(this.type='datetime-local')");
     dueDate.classList.add('date');
     dueDate.placeholder = 'Due date';
