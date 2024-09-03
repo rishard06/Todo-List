@@ -1,4 +1,5 @@
 import "./style2.css"
+import { format, parseISO } from 'date-fns'
 
 export default function(id, title, description, dueDate, priority) {
     const rightSide = document.querySelector('.right-side');
@@ -29,7 +30,11 @@ export default function(id, title, description, dueDate, priority) {
     
     const date = document.createElement('p');
     date.classList.add("date-content")
-    date.textContent = dueDate;
+    if(dueDate) {
+        const datee = parseISO(dueDate);
+        const formattedDate = format(datee, "MMM do, yyyy 'at' h:mm a");
+        date.textContent = formattedDate;
+    }
     //checklist
     const addCheckbox = document.createElement('button');
     addCheckbox.classList.add('add-checkbox');
@@ -78,13 +83,13 @@ export default function(id, title, description, dueDate, priority) {
                         ul.removeChild(el)
                     }
                 })
-            }
+            }   
         }
     });
 }
 
 const addNote = (id, pri) => {
-    const parent = document.querySelector(`.${id}`);
+    const parent = document.querySelector('.' + id);
     const div = document.createElement('div');
     div.classList.add('add-note-content');
     div.style.border = `1px solid ${pri}`;
@@ -109,7 +114,7 @@ const addNote = (id, pri) => {
 }
 
 const addCheckBox = (id, pri) => {
-    const parent = document.querySelector(`.${id}`)
+    const parent = document.querySelector('.' + id)
     const div = document.createElement('div');
     div.classList.add('add-checkbox-content');
     div.style.border = `1px solid ${pri}`;

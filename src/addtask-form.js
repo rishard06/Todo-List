@@ -68,7 +68,6 @@ export default function() {
         if(titleInput.value === "") {
             alert("fill the title form");
             titleInput.required = true;
-            dueDate.required = true;
         }else {
             addInfo(
                 titleInput.value,
